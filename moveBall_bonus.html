@@ -1,0 +1,77 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+  <canvas id="myCanvas" width="480" height="320"></canvas>
+
+<script>
+
+
+var positionX = 0;
+var positionY = 0;
+var velocityX = 5;
+var velocityY = 3;
+
+var ball = document.getElementById('ball');
+var radianVelocity =0.005;
+// YOUR CODE 
+// ----------------
+
+function moveball() {
+
+if ((positionX>700) || (positionX<0)) {
+
+    velocityX =velocityX*-2;
+    ball.style.background='gray';
+}
+
+if ((positionY>400) || (positionY<0)) {
+
+velocityY =velocityY*-2;
+ball.style.background='green';
+}
+
+positionX =positionX+velocityX;
+positionY=positionY+velocityY;
+
+ball.style.top=positionY+'px';
+ball.style.left=positionX+'px';
+
+}
+
+setInterval(moveball, 25);
+
+
+
+
+
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+var x = canvas.width/2;
+var y = canvas.height-30;
+var dx = 2;
+var dy = -2;
+
+function drawBall() {
+    ctx.beginPath();
+    ctx.arc(x, y, 10, 0, Math.PI*2);
+    ctx.fillStyle = "#0095DD";
+    ctx.fill();
+    ctx.closePath();
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBall();
+    x += dx;
+    y += dy;
+}
+
+setInterval(draw, 10);
+</script>

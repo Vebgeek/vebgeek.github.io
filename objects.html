@@ -1,0 +1,46 @@
+<script>
+let person=
+{
+    name : 'Swamy',
+occupation :'Software'
+}
+
+
+console.log('resu',person)
+
+
+function getProduct(productid) {
+    //write code here
+    let sample_object = {
+       id : productid,
+       serialNumber :'WD579000',
+       manufacturer: 'Apple',
+       price : 1500,
+    }
+     return sample_object;
+}
+
+console.log('result:'+ JSON.stringify(getProduct(1)));
+//console.log('result:'+ sample_object.price);
+
+let bike = {
+    model : 'marin',
+    wheels: 2,
+    speed:8,
+    authorizedbikers :['beatrice','Alan'],
+    hasHadAccident : false
+};
+function getBikeSpeed(){
+    bike.speed=12;
+    return bike.speed;
+}
+
+console.log('result:',+JSON.stringify(getBikeSpeed()));
+
+function sayHello(){
+
+    console.log('Hello World');
+}
+setTimeout(sayHello,2000);
+
+</script>

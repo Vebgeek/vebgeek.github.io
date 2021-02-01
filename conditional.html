@@ -1,0 +1,27 @@
+<script>
+
+let response;
+
+    function isOldEnoughToVote(age){
+        if (age===18){
+            response=true;
+        }
+        else{
+            response=false;
+        }
+        return response;
+    }
+    console.log('electionage:',isOldEnoughToVote(18));
+
+    //don't change this line
+if (typeof module !== 'undefined') {
+  module.exports = isOldEnoughToVote;
+}
+
+var counter=0;
+while(counter<10) {
+    console.log(counter);
+    counter=counter+1;
+}
+console.log('final number is:'+counter);
+</script>
